@@ -1,0 +1,71 @@
+[bar/bar]
+background     = #181512
+foreground     = #C06D44
+
+height         = 40
+width          = 40
+offset-x       = 32
+offset-y       = 152
+
+bottom         = true
+fixed-center   = true
+font-0         = iosevka
+
+modules-center = display
+
+wm-name        = bar
+enable-ipc     = true
+
+[module/display]
+type           = custom/text
+content        = pwr
+click-left     = lock
+click-right    = shutdown now
+
+
+[bar/bar1]
+window				 = ${env:MONITOR}
+inherit        = bar/bar
+background     = #181512
+foreground     = #C06D44
+modules-center = 2bws
+width          = 80
+offset-y       = 112
+
+[bar/bar2]
+window				 = ${env:MONITOR}
+inherit        = bar/bar
+background     = #181512
+foreground     = #C06D44
+modules-center = bat
+width          = 100
+offset-y       = 72
+
+
+[bar/bar3]
+window				 = ${env:MONITOR}
+inherit        = bar/bar
+background     = #181512
+foreground     = #C06D44
+modules-center = date
+width          = 150
+offset-y       = 32
+separator      = " - "
+
+[module/date]
+type 	       = internal/date
+interval       = 60
+date           = %y/%m/%d %H:%M
+label          = %date% 
+
+[module/bat]
+type           = custom/script
+interval       = 5
+exec           = ~/.config/polybar/bat
+
+[module/2bws]
+type	       = custom/script
+interval       = 0.5
+scroll-up      = xdesktop -n
+scroll-down    = xdesktop -p
+exec	       = ~/.config/polybar/2bws

@@ -1,0 +1,37 @@
+* Find a package
+** # pkg search -o ranger
+* PortMaster
+** Delete
+** Install
+** Update
+* Change Brightness
+** Display Name
+eDP-1
+** Commands
+xrandr --output eDP-1 --brightness 1
+xrandr --output eDP-1 --brightness 0.9
+* Change Volume
+** Commands
+mixer vol -5
+mixer vol +5
+* Change Audio Output
+** NOTES:
+*** 1 is headphones 0 is speaker
+*** command to see devices
+**** cat /dev/sndstat
+** Commands
+sudo sysctl hw.snd.default_unit=1
+sudo sysctl hw.snd.default_unit=0
+* Simple Terminal
+** Command
+sudo make deinstall clean
+sudo make ST_CONF=/usr/ports/x11/sterm/config.h clean install
+* Firefox
+** Dbus issues
+sudo service dbus onestart
+sudo service dbus start
+* Redshift
+** Tips:
+6500=highest, 3500=lowest??
+** Ex:
+redshift -O 6500

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ws=$( xprop -root _NET_CURRENT_DESKTOP | sed -e 's/_NET_CURRENT_DESKTOP(CARDINAL) = //' )
+
+ws=$(( $ws + 1 ))
+
+draw(){
+		echo 1:$ws
+}
+
+draw

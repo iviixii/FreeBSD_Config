@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Description: Display the battery level or status
+# Dependency: acpi
+
+power=`sysctl -n hw.acpi.battery.life`
+	
+if [ $power == "100%" ]
+then
+	echo "ful"
+else
+	echo "bat:" ${power}%
+fi
